@@ -8,7 +8,7 @@ module MetaRequest
       app_line = caller.detect { |c| valid_application_path? c }
       return nil unless app_line
 
-      _, filename, _, line, _, method = app_line.split(/^(.*?)(:(\d+))(:in `(.*)')?$/)
+      _, filename, _, line, _, method = app_line.split(/^(.*?)(:(\d+))(:in '(.*)')?$/)
 
       {
         filename: sub_source_path(filename),
